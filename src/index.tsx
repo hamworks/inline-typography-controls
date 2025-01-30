@@ -1,4 +1,8 @@
-import { registerFormatType, toggleFormat } from '@wordpress/rich-text';
+import {
+	registerFormatType,
+	applyFormat,
+	removeFormat,
+} from '@wordpress/rich-text';
 import { RichTextToolbarButton } from '@wordpress/block-editor';
 
 const formatName = 'inline-font-control/sample-output';
@@ -10,11 +14,15 @@ const MyCustomButton = ( { isActive, onChange, value } ) => {
 			icon="editor-code"
 			title="Sample output"
 			onClick={ () => {
-				onChange(
-					toggleFormat( value, {
-						type: formatName,
-					} )
-				);
+				if ( isActive ) {
+					onChange( removeFormat( value, formatName ) );
+				} else {
+					onChange(
+						applyFormat( value, {
+							type: formatName,
+						} )
+					);
+				}
 			} }
 			isActive={ isActive }
 		/>
