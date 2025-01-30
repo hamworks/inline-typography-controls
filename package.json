@@ -16,6 +16,7 @@
 	"author": "HAMWORKS Co., Ltd.",
 	"license": "GPL-2.0-or-later",
 	"devDependencies": {
+		"@types/wordpress__block-editor": "^11.5.16",
 		"@wordpress/env": "^10.11.0",
 		"@wordpress/prettier-config": "^4.11.0",
 		"@wordpress/scripts": "^30.4.0",
@@ -47,6 +48,9 @@
 		"node": "18.18.2"
 	},
 	"dependencies": {
+		"@wordpress/block-editor": "^14.12.0",
+		"@wordpress/components": "^29.3.0",
+		"@wordpress/i18n": "^5.17.0",
 		"@wordpress/rich-text": "^7.17.0"
 	}
 }
