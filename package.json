@@ -49,7 +49,7 @@
 			"before:bump": [
 				"composer install --optimize-autoloader --prefer-dist --no-dev",
 				"bash ./bin/create-release.sh inline-typography-controls ${version}",
-				"bash ./bin/create-zip.sh inline-typography-controls"
+				"bash ./bin/create-zip.sh inline-typography-controls-${version}"
 			],
 			"after:bump": "composer install --optimize-autoloader --prefer-dist",
 			"after:release": "bash ./bin/cleanup.sh inline-typography-controls"
