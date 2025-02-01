@@ -103,7 +103,7 @@ function InlineFontSizeUI( {
 
 	return (
 		<Popover anchor={ popoverAnchor } onClose={ onClose }>
-			<div style={ { padding: '1em', width: '240px' } }>
+			<div style={ { padding: '16px', width: '240px' } }>
 				<FontSizePicker
 					fontSizes={ fontSizes }
 					onChange={ onChangeFontSize }
@@ -111,7 +111,7 @@ function InlineFontSizeUI( {
 					withSlider
 					withReset={ false }
 				/>
-				<div style={ { marginTop: '1em', display: 'flex' } }>
+				<div style={ { marginTop: '16px', display: 'flex' } }>
 					<Button
 						onClick={ () => {
 							onChange( removeFormat( value, formatName ) );
