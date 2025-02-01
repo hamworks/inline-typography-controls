@@ -103,9 +103,11 @@ function InlineUI( {
 					withSlider
 					size="__unstable-large"
 				/>
-				<Button onClick={ onClose } variant="secondary">
-					{ __( 'Apply' ) }
-				</Button>
+				<div style={ { marginTop: '1em' } }>
+					<Button onClick={ onClose } variant="secondary">
+						{ __( 'Apply' ) }
+					</Button>
+				</div>
 			</div>
 		</Popover>
 	);
