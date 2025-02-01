@@ -7,7 +7,6 @@ import {
 } from '@wordpress/rich-text';
 import type { RichTextValue } from '@wordpress/rich-text';
 import { typography } from '@wordpress/icons';
-
 import {
 	RichTextToolbarButton,
 	// @ts-ignore
@@ -71,7 +70,29 @@ function InlineFontSizeUI( {
 	onClose,
 	isActive,
 }: InlineFontSizeUIProps ) {
-	const [ fontSizes ] = useSettings( 'typography.fontSizes' );
+	const [
+		defaultFontSizesEnabled,
+		customFontSizes,
+		defaultFontSizes,
+		themeFontSizes,
+		customFontSize,
+	] = useSettings(
+		'typography.defaultFontSizes',
+		'typography.fontSizes.custom',
+		'typography.fontSizes.default',
+		'typography.fontSizes.theme',
+		'typography.customFontSize'
+	);
+
+	function getMergedFontSizes() {
+		return [
+			...( customFontSizes ?? [] ),
+			...( themeFontSizes ?? [] ),
+			...( defaultFontSizesEnabled ? defaultFontSizes ?? [] : [] ),
+		];
+	}
+
+	console.log( getMergedFontSizes() );
 
 	const activeInlineFontSizeFormat = getActiveFormat( value, formatName );
 	const activeFontSize: string =
@@ -104,26 +125,30 @@ function InlineFontSizeUI( {
 	};
 
 	return (
-		<Popover anchor={ popoverAnchor } onClose={ onClose }>
-			<div style={ { padding: '16px', width: '240px' } }>
-				<FontSizePicker
-					fontSizes={ fontSizes }
-					onChange={ onChangeFontSize }
-					value={ activeFontSize }
-					withSlider
-					withReset={ false }
-				/>
-				<div style={ { marginTop: '16px', display: 'flex' } }>
-					<Button
-						onClick={ () => {
-							onChange( removeFormat( value, formatName ) );
-						} }
-						variant="tertiary"
-						style={ { marginLeft: 'auto' } }
-					>
-						{ __( 'Clear' ) }
-					</Button>
-				</div>
+		<Popover
+			anchor={ popoverAnchor }
+			onClose={ onClose }
+			className="inline-typography-controls-font-size-popover"
+		>
+			<FontSizePicker
+				__next40pxDefaultSize
+				fontSizes={ getMergedFontSizes() }
+				disableCustomFontSizes={ ! customFontSize }
+				onChange={ onChangeFontSize }
+				value={ activeFontSize }
+				withSlider
+				withReset={ false }
+			/>
+			<div style={ { marginTop: '16px', display: 'flex' } }>
+				<Button
+					onClick={ () => {
+						onChange( removeFormat( value, formatName ) );
+					} }
+					variant="tertiary"
+					style={ { marginLeft: 'auto' } }
+				>
+					{ __( 'Clear' ) }
+				</Button>
 			</div>
 		</Popover>
 	);
