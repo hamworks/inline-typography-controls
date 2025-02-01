@@ -38,13 +38,7 @@ function Edit( { isActive, onChange, value, contentRef } ) {
 			<RichTextToolbarButton
 				icon={ typography }
 				title={ settings.title }
-				onClick={ () => {
-					if ( isActive ) {
-						onChange( removeFormat( value, formatName ) );
-					} else {
-						togglePopover();
-					}
-				} }
+				onClick={ togglePopover }
 				isActive={ isActive }
 				role="menuitemcheckbox"
 			/>
@@ -109,15 +103,23 @@ function InlineFontSizeUI( {
 
 	return (
 		<Popover anchor={ popoverAnchor } onClose={ onClose }>
-			<div style={ { padding: '1em', width: '300px' } }>
+			<div style={ { padding: '1em', width: '240px' } }>
 				<FontSizePicker
 					fontSizes={ fontSizes }
 					onChange={ onChangeFontSize }
 					value={ activeFontSize }
+					withSlider
+					withReset={ false }
 				/>
-				<div style={ { marginTop: '1em' } }>
-					<Button onClick={ onClose } variant="secondary">
-						{ __( 'Apply' ) }
+				<div style={ { marginTop: '1em', display: 'flex' } }>
+					<Button
+						onClick={ () => {
+							onChange( removeFormat( value, formatName ) );
+						} }
+						variant="tertiary"
+						style={ { marginLeft: 'auto' } }
+					>
+						{ __( 'Clear' ) }
 					</Button>
 				</div>
 			</div>
