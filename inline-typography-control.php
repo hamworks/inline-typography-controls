@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Inline Typography Control
+ * Plugin Name: Inline Typography Controls
  * Description: Add inline font control to the editor.
  * Version: 1.0
  * Author: HAMWORKS
