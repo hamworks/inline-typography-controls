@@ -7,6 +7,7 @@ import {
 	getActiveFormat,
 } from '@wordpress/rich-text';
 import type { RichTextValue } from '@wordpress/rich-text';
+import { typography } from '@wordpress/icons';
 
 import {
 	RichTextToolbarButton,
@@ -27,8 +28,8 @@ const Edit = ( { isActive, onChange, value, contentRef } ) => {
 	return (
 		<>
 			<RichTextToolbarButton
-				icon="editor-code"
-				title="Sample output"
+				icon={ typography }
+				title={ settings.title }
 				onClick={ () => {
 					if ( isActive ) {
 						onChange( removeFormat( value, formatName ) );
@@ -115,7 +116,7 @@ function InlineUI( {
 }
 
 const settings = {
-	title: 'Sample output',
+	title: __('Font Size' ),
 	tagName: 'span',
 	className: 'has-inline-font-size',
 	interactive: false,
