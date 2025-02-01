@@ -6,7 +6,7 @@
  * Author: HAMWORKS
  * License: GPL-2.0+
  *
- * @package inline-typography-control
+ * @package inline-typography-controls
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

@@ -16,7 +16,7 @@ import {
 import { Popover, FontSizePicker, Button } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-const formatName = 'inline-typography-control/font-size';
+const formatName = 'inline-typography-controls/font-size';
 
 // @ts-ignore
 const Edit = ( { isActive, onChange, value, contentRef } ) => {
