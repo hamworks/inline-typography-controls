@@ -52,7 +52,7 @@
 				"bash ./bin/create-zip.sh inline-typography-controls-${version}"
 			],
 			"after:bump": "composer install --optimize-autoloader --prefer-dist",
-			"after:release": "bash ./bin/cleanup.sh inline-typography-controls"
+			"after:release": "bash ./bin/cleanup.sh inline-typography-controls-${version}"
 		},
 		"github": {
 			"release": true,
