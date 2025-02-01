@@ -6,16 +6,17 @@ import {
 	useAnchor,
 	getActiveFormat,
 } from '@wordpress/rich-text';
+import type { RichTextValue } from '@wordpress/rich-text';
+
 import {
 	RichTextToolbarButton,
 	// @ts-ignore
 	useSettings,
 } from '@wordpress/block-editor';
 import { Popover, FontSizePicker, Button } from '@wordpress/components';
-import type { RichTextValue } from '@wordpress/rich-text/build-types/remove-format';
 import { __ } from '@wordpress/i18n';
 
-const formatName = 'inline-font-control/sample-output';
+const formatName = 'inline-typography-control/font-size';
 
 // @ts-ignore
 const Edit = ( { isActive, onChange, value, contentRef } ) => {

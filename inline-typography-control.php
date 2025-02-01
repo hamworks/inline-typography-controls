@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: Inline Font Control
+ * Plugin Name: Inline Typography Control
  * Description: Add inline font control to the editor.
  * Version: 1.0
- * Author: torounit
+ * Author: HAMWORKS
  * License: GPL-2.0+
  *
- * @package inline-font-control
+ * @package inline-typography-control
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
