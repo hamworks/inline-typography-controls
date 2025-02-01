@@ -57,7 +57,7 @@
 		"github": {
 			"release": true,
 			"assets": [
-				"inline-typography-controls.zip"
+				"*.zip"
 			]
 		},
 		"npm": {
