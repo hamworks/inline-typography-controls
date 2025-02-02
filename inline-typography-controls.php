@@ -5,6 +5,8 @@
  * Version: 0.3.0
  * Author: HAMWORKS
  * License: GPL-2.0+
+ * GitHub Plugin URI: hamworks/inline-typography-controls
+ * Release Asset: true
  *
  * @package inline-typography-controls
  */
