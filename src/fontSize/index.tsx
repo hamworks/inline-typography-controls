@@ -92,8 +92,6 @@ function InlineFontSizeUI( {
 		];
 	}
 
-	console.log( getMergedFontSizes() );
-
 	const activeInlineFontSizeFormat = getActiveFormat( value, formatName );
 	const activeFontSize: string =
 		// @ts-ignore
