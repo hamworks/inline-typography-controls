@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Inline Typography Controls
  * Description: Add inline typography controls to the editor.
- * Version: 0.2.0
+ * Version: 0.3.0
  * Author: HAMWORKS
  * License: GPL-2.0+
  *
