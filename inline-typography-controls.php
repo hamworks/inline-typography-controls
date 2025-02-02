@@ -13,26 +13,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-add_action( 'enqueue_block_editor_assets', 'inline_typography_controls_wp_enqueue_scripts' );
+add_action(
+	'enqueue_block_editor_assets',
+	function () {
 
-/**
- * Enqueue block editor assets
- */
-function inline_typography_controls_wp_enqueue_scripts(): void {
+		wp_enqueue_style(
+			'inline-typography-controls-editor-styles',
+			plugin_dir_url( __FILE__ ) . '/build/index.css',
+			array(),
+			filemtime( __DIR__ . '/build/index.css' )
+		);
 
-	wp_enqueue_style(
-		'inline-typography-controls',
-		plugin_dir_url( __FILE__ ) . '/build/style-index.css',
-		array(),
-		filemtime( __DIR__ . '/build/style-index.css' )
-	);
+		$asset_file = include __DIR__ . '/build/index.asset.php';
+		wp_enqueue_script(
+			'inline-typography-controls',
+			plugin_dir_url( __FILE__ ) . '/build/index.js',
+			$asset_file['dependencies'],
+			filemtime( __DIR__ . '/build/index.js' ),
+			true
+		);
+	}
+);
 
-	$asset_file = include __DIR__ . '/build/index.asset.php';
-	wp_enqueue_script(
-		'inline-typography-controls',
-		plugin_dir_url( __FILE__ ) . '/build/index.js',
-		$asset_file['dependencies'],
-		filemtime( __DIR__ . '/build/index.js' ),
-		true
-	);
-}
+add_action(
+	'enqueue_block_assets',
+	function () {
+		wp_enqueue_style(
+			'inline-typography-controls-styles',
+			plugin_dir_url( __FILE__ ) . '/build/style-index.css',
+			array(),
+			filemtime( __DIR__ . '/build/style-index.css' )
+		);
+	}
+);

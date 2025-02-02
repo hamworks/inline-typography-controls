@@ -15,7 +15,7 @@ import {
 import { Popover, FontSizePicker, Button } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-import './style.css';
+import './editor.css';
 
 export const formatName = 'inline-typography-controls/font-size';
 

@@ -3,6 +3,8 @@ import { toggleFormat } from '@wordpress/rich-text';
 import { RichTextToolbarButton } from '@wordpress/block-editor';
 import { square } from '@wordpress/icons';
 
+import './style.css';
+
 export const formatName = 'inline-typography-controls/inline-block';
 
 export const settings = {
