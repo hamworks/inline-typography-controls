@@ -1,13 +1,13 @@
 import { __ } from '@wordpress/i18n';
 import { toggleFormat } from '@wordpress/rich-text';
 import { RichTextToolbarButton } from '@wordpress/block-editor';
-import { pencil } from '@wordpress/icons';
+import { info } from '@wordpress/icons';
 
 
 export const formatName = 'inline-typography-controls/small';
 
 export const settings = {
-	title: __( 'Small' ),
+	title: __( 'Side comment', 'inline-typography-controls' ),
 	tagName: 'small',
 	className: null,
 	interactive: false,
@@ -20,7 +20,7 @@ function Edit( { isActive, onChange, value } ) {
 	return (
 		<>
 			<RichTextToolbarButton
-				icon={ pencil }
+				icon={ info }
 				title={ settings.title }
 				onClick={ () =>
 					onChange( toggleFormat( value, { type: formatName } ) )
