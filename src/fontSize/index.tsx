@@ -25,8 +25,14 @@ export const settings = {
 	className: 'has-inline-font-size',
 	interactive: false,
 	name: formatName,
+	attributes: {
+		style: 'style',
+		inlineFontSize: 'data-inline-font-size',
+	},
 	edit: Edit,
-};
+} as const;
+
+type Attributes = { [ K in keyof typeof settings.attributes ]: string };
 
 // @ts-ignore
 function Edit( { isActive, onChange, value, contentRef } ) {
@@ -63,6 +69,7 @@ type InlineFontSizeUIProps = {
 	onClose: () => void;
 	isActive: boolean;
 };
+
 function InlineFontSizeUI( {
 	value,
 	contentRef,
@@ -93,10 +100,11 @@ function InlineFontSizeUI( {
 	}
 
 	const activeInlineFontSizeFormat = getActiveFormat( value, formatName );
-	const activeFontSize: string =
-		// @ts-ignore
-		activeInlineFontSizeFormat?.attributes?.[ 'data-inline-font-size' ] ??
-		'';
+	// @ts-ignore
+	const attributes = activeInlineFontSizeFormat?.attributes as
+		| Partial< Attributes >
+		| undefined;
+	const activeFontSize = attributes?.inlineFontSize ?? '';
 
 	const popoverAnchor = useAnchor( {
 		editableContentElement: contentRef.current,
@@ -114,7 +122,7 @@ function InlineFontSizeUI( {
 					type: formatName,
 					// @ts-ignore
 					attributes: {
-						'data-inline-font-size': `${ fontSize }`,
+						inlineFontSize: `${ fontSize }`,
 						style: `font-size: ${ fontSize };`,
 					},
 				} )
