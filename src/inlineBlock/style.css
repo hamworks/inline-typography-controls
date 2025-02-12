@@ -3,7 +3,7 @@
 }
 
 
-.editor-styles-wrapper .is-selected .has-inline-block {
+.editor-styles-wrapper .rich-text.is-selected .has-inline-block {
 	outline: 1px dotted #999;
 	outline-offset: -1px;
 }
