@@ -16,6 +16,8 @@ Add inline typography controls to the editor.
 
 Add inline typography controls to the editor.
 
+Github: https://github.com/hamworks/inline-typography-controls
+
 ### Controls
 
 * Font Size
