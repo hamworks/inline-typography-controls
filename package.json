@@ -36,6 +36,7 @@
 		"@wordpress/block-editor": "^14.13.0",
 		"@wordpress/components": "^29.4.0",
 		"@wordpress/i18n": "^5.18.0",
+		"@wordpress/icons": "^10.18.0",
 		"@wordpress/rich-text": "^7.18.0"
 	},
 	"devDependencies": {

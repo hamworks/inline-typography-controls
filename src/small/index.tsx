@@ -3,7 +3,6 @@ import { toggleFormat } from '@wordpress/rich-text';
 import { RichTextToolbarButton } from '@wordpress/block-editor';
 import { info } from '@wordpress/icons';
 
-
 export const formatName = 'inline-typography-controls/small';
 
 export const settings = {
