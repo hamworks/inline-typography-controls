@@ -24,7 +24,6 @@ nightly
 .wp-env.json
 .editorconfig
 .phpcs.xml.dist
-composer.json
 composer.lock
 package.json
 package-lock.json
