@@ -17,5 +17,7 @@ Add inline typography controls to the editor.
 Add inline typography controls to the editor.
 
 ### Controls
-* Font Size
 
+* Font Size
+* Inline block
+* Small tag
